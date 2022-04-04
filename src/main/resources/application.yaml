@@ -1,0 +1,7 @@
+spring:
+  redis:
+    url: redis://@192.168.200.137:6400
+    client-type: jedis                   #jedis是redis的java客户端,还可以切换成 Lettuce
+    jedis:
+      pool:
+        max-active: 10

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .gg{
+            margin-left: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>现在开始秒杀！</h1>
+<form class="gg" th:action="@{/uii}" method="post" >
+    <input type="hidden" id="prodid" name="prodid" value="0101">
+    <button type="submit" class="btn btn-primary">秒杀</button>
+
+    <span class="gg" th:text="${cishu}"></span>
+</form>
+</body>
+</html>

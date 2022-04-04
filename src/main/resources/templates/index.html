@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞测试</title>
+<style>
+    #boss{
+        width: 2024px;
+        height: 1024px;
+        background-color: #2999E3;
+    }
+    #ph{
+        margin-left: 300px;
+        margin-top: 200px;
+    }
+    #dz{
+        margin-top: 10px;
+        margin-left: 570px;
+    }
+    #a1{
+        margin-left: 600px;
+    }
+    #a2{
+        width: 50px;
+        margin-left: 500px;
+    }
+    #a2:hover{
+        width: 60px;
+    }
+    #ms{
+        margin-left: 500px;
+        text-decoration: none;
+        color: red;
+    }
+</style>
+</head>
+<body>
+ <div id="boss">
+     <br><br><br>
+     <h1 id="ph" >抽刀断水水更流,举杯销愁愁更愁</h1>
+     <h2 id="a1">       ----令狐冲</h2>
+          <a th:href="@{/}" ><img id="a2" src="2.jpg"></a> <br>
+     <span id="dz">点赞数: </span><span  th:text="${count}"></span>
+     <br>
+     <br>
+     <br>
+     <a id="ms" th:href="@{/skill}">秒杀进入</a>
+ </div>
+</body>
+</html>
