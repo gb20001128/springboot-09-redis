@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #del{
+            text-decoration: none;
+            color: #2999E3;
+        }
+    </style>
+</head>
+<body>
+<form>
+<tr th:each="name,stat:${listAll}">
+    <td>第[[${stat.count}]]名</td>
+    <td th:text="${name}"></td> <a id="del" th:href="@{'/del/'+${name}}">删除</a> <hr>
+</tr>
+
+</form>
+<form th:action="@{/add}" method="post">
+    <input type="submit" value="添加姓名">
+</form>
+
+
+</body>
+</html>
