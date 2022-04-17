@@ -8,6 +8,11 @@
             margin-left: 20px;
             color: red;
         }
+        #flush{
+            background-color: rgb(63 133 255);
+            color: white;
+            border-color: #2999E3;
+        }
     </style>
 </head>
 <body>
@@ -17,6 +22,11 @@
     <button type="submit" class="btn btn-primary">秒杀</button>
 
     <span class="gg" th:text="${cishu}"></span>
+</form>
+<br>
+<br>
+<form  th:action="@{/skill}" method="get">
+    <button type="submit" id="flush">刷新再试一次</button>
 </form>
 </body>
 </html>

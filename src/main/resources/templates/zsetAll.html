@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--BootStrap美化页面-->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .img{
+            height: 70px;
+            margin-right: -70px;
+        }
+        #ui{
+           margin-left: 510px;
+        }
+        #gekai{
+            float: right;
+        }
+        #xin{
+            text-decoration: none;
+            font-size: 38px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 colum">
+            <div class="page-header">
+                <h1>
+                    <small>---------偶像列表--------</small>
+                </h1> <a id="ui" class="btn btn-primary" th:href="@{/zsetadd}">添加偶像</a>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover table-striped"  >
+                <thead>
+                <tr>
+                    <th>封面</th>
+                    <th>名次</th>
+                    <th>偶像</th>
+                    <th>票数</th>
+                    <th>为他打Call</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="idol,stat:${zsetAll}">
+                    <th><img  class="img" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb.zol-img.com.cn%2Fdesk%2Fbizhi%2Fimage%2F6%2F2560x1600%2F1429775582570.jpg&refer=http%3A%2F%2Fb.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645521512&t=78532236b9e4f02e96ea5cc10b23a517"> </th>
+
+                    <td>第[[${stat.count}]]名</td>
+                    <td  th:text="${idol.value}"></td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td  th:text="${#numbers.formatInteger(idol.score,0)}"></td>
+                    <td>
+                        <a id="xin" th:href="@{'/call/'+${idol.value}}">❤</a>&nbsp;
+                        <a id="gekai" class="btn btn-primary" th:href="@{'/delidol/'+${idol.value}}">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+︎
+</body>
+</html>

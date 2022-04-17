@@ -37,6 +37,14 @@
         text-decoration: none;
         color: red;
     }
+    #zset{
+        margin-left: 500px;
+        text-decoration: none;
+        color: red;
+    }
+    #divv{
+        height: 60px;
+    }
 </style>
 </head>
 <body>
@@ -44,7 +52,7 @@
      <br><br><br>
      <h1 id="ph" >抽刀断水水更流,举杯销愁愁更愁</h1>
      <h2 id="a1">       ----令狐冲</h2>
-          <a th:href="@{/}" ><img id="a2" src="2.jpg"></a> <br>
+     <div id="divv" > <a th:href="@{/}" ><img id="a2" src="2.jpg"></a></div> <br>
      <span id="dz">点赞数: </span><span  th:text="${count}"></span>
      <br>
      <br>
@@ -52,6 +60,9 @@
      <a id="ms" th:width="50px" th:href="@{/skill}">秒杀进入</a>
      <br>
      <a id="list" th:href="@{/listAll}">查看list人名</a>
+     <br>
+     <br>
+     <a id="zset" th:width="50px" th:href="@{/zsetAll}">给偶像打分</a>
  </div>
 </body>
 </html>

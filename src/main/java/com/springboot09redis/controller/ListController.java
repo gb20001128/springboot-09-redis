@@ -36,6 +36,7 @@ public class ListController {
 
     @PostMapping("/addList")
     public String addList(String name , Model model){
+        if(name==""){ model.addAttribute("error","不能提交空名字！"); return "addlist";}
         ListOperations<String, String> operations  = redisTemplate.opsForList();
         operations.rightPush("name", name);
         List<String> names = operations.range("name", 0, -1);

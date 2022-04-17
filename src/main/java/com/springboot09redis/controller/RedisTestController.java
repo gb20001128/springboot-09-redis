@@ -16,7 +16,7 @@ public class RedisTestController {
     @Autowired
     StringRedisTemplate redisTemplate;
 
-    //使用lua脚本保证删除锁的原子性(意思就是删除锁的时候不能受干扰)
+    // redis来实现分布式锁 [使用lua脚本保证删除锁的原子性(意思就是删除锁的时候不能受干扰)]
     @GetMapping("/testLockLua")
     public void testLockLua() {
         //1 声明一个uuid ,将做为一个value 放入我们的key所对应的值中
@@ -68,7 +68,7 @@ public class RedisTestController {
         }
     }
 
-    //
+    // redis来实现分布式锁 [不使用lua脚本，只使用nx、ex、uuid]
     @GetMapping("/testLock")
     public void testLock(){
         String uuid = UUID.randomUUID().toString();

@@ -11,9 +11,12 @@
 </head>
 <body>
 
-  <form th:action="@{/addList}" method="post">
+  <form th:action="@{/addzset}" method="post">
 
-    <input th:name="name"  type="text">
+    偶像姓名:<input th:name="idol"  type="text">
+              <br>
+     初始票数:<input th:name="score"  type="text">
+
     <input type="submit" value="提交">
       <span id="error" th:text="${error}"></span>
   </form>
